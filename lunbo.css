@@ -1,0 +1,86 @@
+#container{
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1040px;
+    min-width: 763px;
+    padding: 20px 30px 0px 30px;
+    border: 1px solid blue;
+}
+#lunbo{
+    width: 100%;
+    height: 227px;
+}
+#imgsbox{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+.abox{
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin: auto;
+    width: 450px;
+    height: 167px;
+    background-color: black;
+    animation-fill-mode:forwards;
+    z-index: -1;
+}
+.abox.l{
+    position: absolute;
+    width: 513px;
+    height: 190px;
+    left:0;
+    top:10px;
+    right:unset;
+    z-index: 0;
+}
+.abox.r{
+    position: absolute;
+    width: 513px;
+    height: 190px;
+    right:0;
+    top:10px;
+    left:unset;
+    z-index: 0;
+}
+.abox img{
+    opacity: 0.5;
+}
+a{  
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#imgsbox img{
+    /*width: 450px;*/
+    /*height: 167px;*/
+}
+#lunbo ul{
+    list-style-type: none;
+}
+#btnsbox{
+    display: inline-block;
+    height: 27px;
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.lbbtn{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 0px;
+    width: 20px;
+    height: 10px;
+    border-top: 2px solid darkgray;
+}
+.lbbtn:hover{
+    border-top: 2px solid red;
+}
