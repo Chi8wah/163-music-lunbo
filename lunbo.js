@@ -3,7 +3,7 @@ $(document).ready(function() {
     var lef = 8;
     var rig = 1;
 
-    //for(var j=0;j<=8;j++){setback(j);$(".abox").stop(false, true);};
+
     setmid(0);$(".abox").stop(false, true);
 
     $(".lbbtn").mouseover(function (){
@@ -16,49 +16,54 @@ $(document).ready(function() {
         var sidewid=boxwid + 'px';
         var boxhei=$("#imgsbox").height()-190;
         var tophei=boxhei + 'px';
+
         $(".abox").stop(true);
         $(".abox img").stop(true);
+
+
         console.log("mid =",i," lef =",lef," now =",now," rig =",rig);
         var newLef=0;
         var newRig=0;
 
         if(i===0){newLef=8;} else {newLef=i-1;}
         if(i===8){newRig=0;} else {newRig=i+1;}
-        setmid(i);
-        setright(newRig,sidewid,tophei);
-        setleft(newLef,sidewid,tophei);
         if((lef!==newLef)&&(lef!==i)&&(lef!==newRig)){setback(lef);}
         if((rig!==newLef)&&(rig!==i)&&(rig!==newRig)){setback(rig);}
         if((now!==newLef)&&(now!==i)&&(now!==newRig)){setback(now);}
+
+
+        setright(newRig,sidewid,tophei);
+        setleft(newLef,sidewid,tophei);
+        setmid(i);
+
         now=i;
         lef=newLef;
         rig=newRig;
+
         for(var j=0;j<=8;j++){
-             if((j!==lef)&&(j!==now)&&(j!==rig)){
-                 setback(j);
-             }
+            if((j!==lef)&&(j!==now)&&(j!==rig)){
+                setback(j);
+            }
         }
         console.log("lef =",lef," now =",now," rig =",rig);
     }
 
     function setmid(mid) {
-        $(".abox").eq(mid).css({"z-index":"1"});
         $(".abox").eq(mid).animate({
              top: '0',
              right: '0',
              left: '0',
             width: '540px',
             height: '200px',
-            opacity:'1',
         },300)
 
         $(".abox img").eq(mid).animate({
             opacity:'1',
         },300)
+        $(".abox").eq(mid).css({"z-index":"1"});
     }
 
     function setback(bk) {
-        $(".abox").eq(bk).css({"z-index":"-1"});
         $(".abox").eq(bk).animate({
              top: '0',
              right: '0',
@@ -66,11 +71,11 @@ $(document).ready(function() {
              bottom: '0',
             width: '450px',
             height: '167px',
-            zIndex: '-1',
         },300)
         $(".abox img").eq(bk).animate({
-            opacity:'0.5',
+            opacity:'1',
         },300)
+        $(".abox").eq(bk).css({"z-index":"-1"});
     }
 
     function setleft(le,lw,th) {
